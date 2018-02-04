@@ -193,7 +193,7 @@ Invalid_argument exception for instance.
 
 let rec max_list (lst : int list) : int =
   match lst with
-  | [] -> failwith "Match_failure"
+  | [] -> raise (Invalid_argument "empty list")
   | [elt] -> elt
   | hd :: tl ->
       let max_tail = max_list tl in
